@@ -25,11 +25,13 @@ import application from "./../utils/application.svg";
 import arrow from './../utils/right-arrow.png';
 import time from './../utils/clock.png';
 import coins from './../utils/coins.png';
-
 import money from './../utils/money-bag.png'
 import FooterPagePro from './footer';
 import Footer from './footer';
 import Application from './application';
+import timeTrack from './../utils/time-tracking.png'
+import deliveryWomen from './../utils/delivery-woman.png'
+import earning from './../utils/earning.png'
 
 
 
@@ -206,7 +208,7 @@ margin:'1.5rem auto 1.5rem'
       fontSize:'1.3rem'
     },
     '& strong':{
-      color:"#00BFFF"
+      color:"#40E0D0"
     }
     }
   }));
@@ -364,7 +366,7 @@ const handleSubmit = async (e) =>{
   <Grid container justifyContent="center" alignItems="center" direction="row">
 
 <Grid item sm={6}>
-
+<img src={timeTrack} height="" alt="work"  data-aos="zoom-in-right"></img>
 </Grid>
 <Grid item sm={6}>
   <div className={classes.infoCard} data-aos="flip-up"> 
@@ -383,14 +385,14 @@ const handleSubmit = async (e) =>{
     </div>
 </Grid>
 <Grid item sm={6}>
- 
+<img src={earning} height="" alt="work" data-aos="zoom-in-left"></img>
 </Grid>
   </Grid>
 
   <Grid container justifyContent="center" alignItems="center" direction="row">
 
 <Grid item sm={6}>
-
+<img src={deliveryWomen} height="" alt="work"  data-aos="zoom-in-right"></img>
 </Grid>
 <Grid item sm={6}>
   <div className={classes.infoCard} data-aos="flip-up">
