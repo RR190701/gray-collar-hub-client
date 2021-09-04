@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import React, {useEffect} from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from './components/home';
@@ -11,8 +12,19 @@ import Sawolabs from './components/sawoAuth';
 import Private from './components/routing/private'
 import MyApplication from './components/myApplicatons';
 import DailyEarning from './components/dailyEarning';
+import AOS  from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
+
+  useEffect(()=>{
+AOS.init(
+  {
+    duration: 1000
+  }
+)
+
+  },[])
   return (
     <div className="App">
       <Router>

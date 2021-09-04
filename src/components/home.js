@@ -3,6 +3,7 @@ import Lottie from 'react-lottie';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import * as animationData from './../utils/deliveryMan.json';
+import * as dayNight from './../utils/day-night.json'
 import Grid from '@material-ui/core/Grid';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
@@ -62,20 +63,20 @@ cont: {
   },
     home_heading:{
         fontSize:"2.5rem",
-        margin:"2rem 0 3rem",
+        margin:"2rem 0 0rem",
         '& strong':{
-          color:"#FF4F5B"
+          color:"#18A558"
         }
     },
     find_jobs:{
-        margin:"2rem 0",
-        backgroundColor:"#fefe22",
+        margin:"0rem 0 2rem",
+        backgroundColor:"#40E0D0",
         color:"#000",
         textTransform:"none",
         marginLeft:'1rem',
               
       '&:hover': {
-        backgroundColor:"yellow",
+        backgroundColor:"#00BFFF",
         color:"#000"
         },
     },
@@ -126,13 +127,13 @@ cont: {
       }
     },
     cardsDiv:{
-      backgroundColor:'#ff9999',
+      backgroundColor:'#90EE90',
       padding:'1rem 0 3rem',
       '& > p':{
         fontSize:'2rem',
         marginBottom:'3rem',
         '& > strong':{
-          color:'#fefe22'
+          color:'#00BFFF'
         }
       }
     },
@@ -151,7 +152,7 @@ cont: {
         fontSize:'1.4rem',
         margin:'.5rem 0 0 0',
         '& > strong':{
-          color:'#FF4F5B'
+          color:'#18A558'
         }
       }
     },
@@ -167,16 +168,22 @@ cont: {
     down:{
       paddingBottom:'2rem',
       '& > h1':{
-fontSize:'2.5rem'
+fontSize:'2.5rem',
+marginTop:'3rem',
+fontWeight:'normal',
+'& > strong':{
+  color:'#18A558'
+}
       },
       '& > h2':{
 fontWeight:'normal',
 width:'80%',
-margin:'0 auto'
+margin:'1.5rem auto 1.5rem'
       },
       '& > p':{
         fontSize:'1.5rem',
         fontWeight:'bold',
+        color:"#18A558"
       }
     }
   }));
@@ -185,6 +192,14 @@ margin:'0 auto'
     loop: true,
     autoplay: true, 
     animationData: animationData.default,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
+  const DayNight = {
+    loop: true,
+    autoplay: true, 
+    animationData: dayNight.default,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice'
     }
@@ -242,14 +257,19 @@ const handleSubmit = async (e) =>{
     return ( <div className={classes.home_div}>
       <Navbar></Navbar>
        <ToastContainer />   
-        <p className={classes.home_heading}>
+        <p className={classes.home_heading} data-aos ="slide-up">
             Earn <strong> hourly</strong>, where ever and when ever you want!
         </p>
+        <div data-aos ="slide-right">
         <Lottie options={defaultOptions}
-              height={300}
-              width={500}
+     
+              height={450}
+              width={400}
               isStopped={false}
               isPaused={false}/>
+
+        </div>
+
 
 <Button className={classes.find_jobs} variant="contained" color="primary">
         <Link className={classes.link} to="/findJobs" >Lets find jobs</Link>
@@ -263,29 +283,38 @@ const handleSubmit = async (e) =>{
       <div className={classes.cardsDiv}>
       <p>With everything so easy, start your <strong>new job </strong>today</p>
       <div className={classes.cards}>
-<Paper className={classes.card}>
+<Paper className={classes.card} data-aos="fade-up" >
   <img src={submitCard} alt="submit"></img>
   <p>Applying to a job is never been this <strong>easy</strong></p>
 </Paper>
-<Paper className={classes.card}>
+<Paper className={classes.card } data-aos="fade-up">
   <img src={interview} alt="interview"></img>
   <p>Get call for <strong>interview</strong></p>
 </Paper>
-<Paper  className={classes.card}>
-<img src={job} alt="job"></img>
+<Paper  className={classes.card} data-aos="fade-up">
+<img src={job} alt="job"  ></img>
 <p>work for multiple companies and <strong>earn more</strong> </p>
 </Paper>
       </div>
       </div>
 
       <div className={classes.down}>
-        <h1>Don't wait, just earn</h1>
-        <h2>Its time to be smart and earn more, join us and work for more than one company at a time. Less waiting times and higher earnings.
+        <h1>Work <strong>Day</strong> and <strong>Night</strong>, plan your own shift</h1>
+        <div data-aos ="zoom-in-up">
+        <Lottie options={DayNight}
+     
+              height={270}
+              width={420}
+              isStopped={false}
+              isPaused={false}/>
+
+        </div>
+        <h2 data-aos ="fade-up">Its time to be smart and earn more, join us and work for more than one company at a time. Less waiting times and higher earnings.
         Utilize that free time to earn a little more, selects jobs and work for all of them, don't be a normal delivery guy be smart work with multiple big companies to maximize your earnings.
 
         </h2>
         <p>With us</p>
-        <div className={classes.earn}>
+        <div className={classes.earn} data-aos ="zoom-in-up">
           <img src={work} alt="work"></img>
           <img src={arrow} alt="work"></img>
           <img src={work} alt="work"></img>
@@ -294,7 +323,7 @@ const handleSubmit = async (e) =>{
           <img src={money} alt="work"></img>
         </div>
         <p>Normal delivery job</p>
-        <div className={classes.earn}>
+        <div className={classes.earn} data-aos ="zoom-in-up">
           <img src={work} alt="work"></img>
           <img src={arrow} alt="work"></img>
           <img src={time} alt="work"></img>

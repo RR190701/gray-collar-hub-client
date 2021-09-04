@@ -30,6 +30,7 @@ icon: {
 },
 left:{
   display:'flex',
+  alignItems:'center',
   '& > p':{
     fontSize:'1.2rem',
     marginLeft:'.5rem',
@@ -40,16 +41,16 @@ left:{
 },
 right:{
   display:'flex',
-alignItems:'center',
+alignItems:'center'
 },
 button:{
-  backgroundColor:'yellow',
+  backgroundColor:'#40E0D0',
   marginRight:'1rem',
   alignContent: 'center',
   justifyContent: 'center',
   textTransform:'none',
   '&:hover':{
-      backgroundColor:'yellow'
+      backgroundColor:'#00BFFF',
   }
 }
 }));
@@ -66,7 +67,7 @@ export default function Navbar(props) {
   return (
     <div className={classes.navbar}>
       <div className={classes.left}>
-      <img src ={icon} alt= "deliver-man" height="60"></img>
+      <img src ={icon} alt= "deliver-man" height="50"></img>
       <p>Lets Deliver it</p>
       </div>
       <div className={classes.right}>
