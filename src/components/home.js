@@ -29,6 +29,7 @@ import coins from './../utils/coins.png';
 import money from './../utils/money-bag.png'
 import FooterPagePro from './footer';
 import Footer from './footer';
+import Application from './application';
 
 
 
@@ -51,15 +52,19 @@ p: {
   fontSize: '1.3rem'
   },
 r: {
-fontFamily: 'cursive',
-  fontSize: '3rem'
+  fontSize: '2.5rem',
+margin:".5rem 0",
+fontWeight:'normal',
+'& strong':{
+  color:"#18A558"
+}
   },
 track: {
-width: '50%'
+width: '50%',
 },
 cont: {
   padding: '1.5rem',
-  background: '#FFFF8A'
+  backgroundColor:'#d0f0c0',
   },
     home_heading:{
         fontSize:"2.5rem",
@@ -185,6 +190,24 @@ margin:'1.5rem auto 1.5rem'
         fontWeight:'bold',
         color:"#18A558"
       }
+    },
+    infoCard:{
+    width:'80%',
+    margin:'2rem auto',
+    backgroundColor:'#fff',
+    borderRadius:'5px',
+    padding:'2rem ',
+    '& h1':{
+      color:"#18A558",
+      fontSize:'1.7rem',
+      fontWeight:'normal'
+    },
+    '& p':{
+      fontSize:'1.3rem'
+    },
+    '& strong':{
+      color:"#00BFFF"
+    }
     }
   }));
 
@@ -334,37 +357,46 @@ const handleSubmit = async (e) =>{
       </div>
       <Grid container justifyContent="center" alignItems="center" className={classes.cont}>
 <Grid item direction="row" xs={12}>
-  <h1 className={classes.r}>Features</h1>
+  <h1 className={classes.r}>What's <strong>more</strong> ?</h1>
 
 </Grid>
 <Grid container justifyContent="center" alignItems="center">
   <Grid container justifyContent="center" alignItems="center" direction="row">
 
-<Grid item xs={6}>
-<img src={progress} className={classes.track} alt="work"></img>
+<Grid item sm={6}>
+
 </Grid>
-<Grid item xs={6}>
-  <h2 className={classes.tr}>
-Track Your Daily Earnings
-</h2>
-<h4 className={classes.p}>
-Track your Earnings on daily basis and keep a track of your daily, weekly and monthly progress.
-</h4>
+<Grid item sm={6}>
+  <div className={classes.infoCard} data-aos="flip-up"> 
+    <h1>Stay updated about your <strong>applications</strong></h1>
+    <p>Keep a track of your applications and stay updated with your hiring status, weather you get hired or regected we keep you informed.</p>
+    </div>
 </Grid>
   </Grid>
+
   <Grid container justifyContent="center" alignItems="center" direction="row">
 
-<Grid item xs={6}>
-<h2 className={classes.tr}> 
-Stay updated with your applications
-</h2>
-<h4 className={classes.p}>
-Keep a track of your applications and stay updated with your hiring status.
-</h4>
+<Grid item sm={6}>
+<div className={classes.infoCard} data-aos="flip-up">
+    <h1>Keep track of your <strong>daily earning</strong> goals</h1>
+<p>Meet up to your daily earning goals as we keep that track for you, look for the shifts you have work for today and earn hourly</p>
+    </div>
 </Grid>
-<Grid item xs={6}>
+<Grid item sm={6}>
  
-<img src={application} className={classes.track} alt="work"></img>
+</Grid>
+  </Grid>
+
+  <Grid container justifyContent="center" alignItems="center" direction="row">
+
+<Grid item sm={6}>
+
+</Grid>
+<Grid item sm={6}>
+  <div className={classes.infoCard} data-aos="flip-up">
+    <h1>Delivery jobs for <strong>women</strong></h1>
+<p>Work as a delivery women, find safe jobs easily in your area and select the timing shifts you are comfortable with</p>
+    </div>
 </Grid>
   </Grid>
 
