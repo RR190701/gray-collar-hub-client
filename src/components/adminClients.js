@@ -171,7 +171,7 @@ const [rows, setRows] = useState([]);
                <Loader
                className={classes.loader}
                 type='TailSpin'
-                color="#FF4F5B"
+                color="#18A558"
                 height={80}
                 width={80}
               />

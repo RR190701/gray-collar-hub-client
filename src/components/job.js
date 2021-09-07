@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
       overflowX: 'hidden',
       textAlign:'center',
       '& > h1':{
-        color:"#FF4F5B",
+        color:"#18A558",
         margin:'1.5rem 0 0 0',
       },
       '& > p':{
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     },
     heading: {
         fontSize: '1.1rem',
-        color:"#FF4F5B",
+        color:"#18A558",
         fontWeight:'bold'
       },
 
@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
         width: '40%',
         margin:'.5rem 1rem',
         '& > strong':{
-            color:"#FF4F5B"
+          color:"#18A558",
 
         },
         '& > p':{
@@ -87,13 +87,13 @@ const useStyles = makeStyles((theme) => ({
     },
     apply:{
         margin:"2rem 0",
-        backgroundColor:"#fefe22",
+        backgroundColor:"#40E0D0",
         color:"#000",
         textTransform:"none",
         marginLeft:'auto',
               
       '&:hover': {
-        backgroundColor:"yellow",
+        backgroundColor:"#00BFFF",
         },
     },
     
@@ -177,7 +177,7 @@ const handleClose = () => {
           <Loader
           className={classes.loader}
            type='TailSpin'
-           color="#FF4F5B"
+           color="#18A558"
            height={80}
            width={80}
          />
@@ -188,7 +188,7 @@ const handleClose = () => {
           <p><strong>{clientName}</strong>, DL road, {location}</p>
           <Grid container spacing={0}>
           <Grid item xs={12} sm ={6} className={classes.paper}>
-              <img src ={Girl} className={classes.girl} alt="girl"></img>
+              <img src ={Girl} className={classes.girl}  data-aos="zoom-out" alt="girl"></img>
               <div className={classes.highlight}> 
                   <div className={classes.box}>
                       <strong>Driving License</strong>
@@ -209,7 +209,9 @@ const handleClose = () => {
               </div>
           </Grid>
           <Grid item xs={12} sm ={6} className={classes.paper}>
-          <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} className={classes.aCard}>
+          <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} className={classes.aCard}
+          
+          data-aos="fade-up">
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1bh-content"
@@ -228,7 +230,9 @@ const handleClose = () => {
             </Typography>
           </AccordionDetails>
         </Accordion>
-        <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} className={classes.aCard}>
+        <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} 
+        data-aos="fade-up"
+        className={classes.aCard}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel2bh-content"

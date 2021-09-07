@@ -20,7 +20,6 @@ import submitCard from './../utils/submitCard.png';
 import interview from './../utils/interview.png';
 import job from './../utils/job.png';
 import work from "./../utils/work.png";
-import progress from "./../utils/progress.svg";
 import application from "./../utils/application.svg";
 import arrow from './../utils/right-arrow.png';
 import time from './../utils/clock.png';
@@ -113,7 +112,7 @@ cont: {
         textAlign:'center',
         margin:0,
         '& strong':{
-          color:"#FF4F5B"
+          color:"#18A558"
         }
       }
 
@@ -422,7 +421,7 @@ const handleSubmit = async (e) =>{
         <div className={classes.paper}>
           <div className={classes.info}>
            
-<img src={call} width="80%" height=" 80%" alt="admin"></img>
+<img src={call} data-aos="zoom-out" width="80%" height=" 80%" alt="admin"></img>
 
 <p>Our team will <strong>contact you</strong>, at the earliest</p>
           </div>
@@ -441,7 +440,7 @@ const handleSubmit = async (e) =>{
       </Button>
       {
         adding?
-        <CircularProgress color="secondary" />:null
+        <CircularProgress color="primary" />:null
       } 
 </form>
 

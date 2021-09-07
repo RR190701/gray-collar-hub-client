@@ -19,7 +19,7 @@ myApp:{
         fontSize:'2rem',
         margin:'1rem 0',
         '& > strong':{
-            color:"#FF4F5B" 
+          color:"#18A558"
         }
     }
 },
@@ -83,7 +83,7 @@ const MyApplication = () => {
 
     return ( <div className={classes.myApp}>
         <Navbar></Navbar>
-        <p>My <strong>Applications</strong></p>
+        <p  data-aos="fade-up">My <strong>Applications</strong></p>
             {
                 
                 loader?(
@@ -91,7 +91,7 @@ const MyApplication = () => {
                   <Loader
                   className={classes.loader}
                    type='TailSpin'
-                   color="#FF4F5B"
+                   color="#18A558"
                    height={80}
                    width={80}
                  />

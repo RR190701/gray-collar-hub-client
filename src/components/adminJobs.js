@@ -96,13 +96,13 @@ loader:{
 allJobs:{
     textAlign:'left',
     '& > button':{
-        backgroundColor:'yellow',
+      backgroundColor:"#40E0D0",
         textTransform:"none",
         color:'black',
         marginBottom:'1rem',
 
         '&:hover':{
-            backgroundColor:'yellow',
+          backgroundColor:"#00BFFF",
         }
     }
 },
@@ -124,7 +124,7 @@ modal: {
      fontSize:'2rem',
      margin:'1.4rem 0 0 0',
      '& > strong':{
-         color:'#FF4F5B'
+      color:"#18A558"
      }
 
     }
@@ -144,14 +144,14 @@ modal: {
     }
   },
   addButton:{
-    backgroundColor:'yellow',
+    backgroundColor:"#40E0D0",
     textTransform:"none",
     color:'black',
     width:'200px',
     margin:'1rem auto 1.3rem',
 
     '&:hover':{
-        backgroundColor:'yellow',
+      backgroundColor:"#00BFFF",
     }
   },
   bigLength:{
@@ -306,7 +306,7 @@ return(
                <Loader
                className={classes.loader}
                 type='TailSpin'
-                color="#FF4F5B"
+                color="#18A558"
                 height={80}
                 width={80}
               />
@@ -351,7 +351,7 @@ return(
         <Fade in={open}>
           <div className={classes.paper}>
       {
-        adding?<LinearProgress color="secondary" />:null
+        adding?<LinearProgress color="primary" />:null
       }      
       
               <p>Add <strong>New Job</strong></p>

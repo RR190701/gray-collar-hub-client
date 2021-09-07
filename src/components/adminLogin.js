@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
       '& p':{
         fontSize:'2.7rem',
         '& strong':{
-            color:"#FF4F5B"
+          color:"#18A558"
           }
       }
       
@@ -57,15 +57,15 @@ const useStyles = makeStyles((theme) => ({
       },
 
       login:{
-          backgroundColor:'yellow',
+        backgroundColor:"#40E0D0",
           color:'#000',
           '&:hover':{
-            backgroundColor:'yellow',
+            backgroundColor:"#00BFFF",
           }
 
       },
       left:{
-        backgroundColor:'#FF4F5B',
+        backgroundColor:'#90EE90',
         borderTopLeftRadius:'5px',
         borderBottomLeftRadius:'5px',
           '& img':{
@@ -126,9 +126,9 @@ const AdminLogin = ({history}) => {
   
     return ( 
         <div className={classes.root}>
-            <p><strong>Admin</strong> login</p>
+            <p data-aos = "fade-up"><strong>Admin</strong> login</p>
 
-            <Grid className={classes.grid} spacing={3}>
+            <Grid className={classes.grid} spacing={3} data-aos ="flip-up">
 
         <Grid className={classes.left} item xs={5}>
 <img src={admin} width="70%" height=" 70%" alt="admin"></img>

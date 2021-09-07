@@ -53,7 +53,7 @@ function TabPanel(props) {
               fontSize:'2.3rem',
               margin:'1rem 0 1.3rem',
               '& > strong':{
-                color:"#FF4F5B"
+                color:"#18A558"
             }
         }
       },
@@ -86,8 +86,8 @@ const AdminDasboard = () => {
         <Tabs
           value={value}
           onChange={handleChange}
-          indicatorColor="secondary"
-          textColor="secondary"
+          indicatorColor="primary"
+          textColor="#18A558"
         >
           <Tab label="All jobs" {...a11yProps(0)} />
           <Tab label="All Clients" {...a11yProps(1)} />

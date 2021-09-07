@@ -120,14 +120,14 @@ const useStyles = makeStyles((theme) => ({
         }
       },
       addButton:{
-        backgroundColor:'yellow',
+        backgroundColor:"#40E0D0",
         textTransform:"none",
         color:'black',
         width:'200px',
         margin:'1rem auto 1.3rem',
     
         '&:hover':{
-            backgroundColor:'yellow',
+          backgroundColor:"#00BFFF",
         }
       },
       bigLength:{
@@ -194,7 +194,7 @@ const handleEditRowsModelChange = React.useCallback((model) => {
                <Loader
                className={classes.loader}
                 type='TailSpin'
-                color="#FF4F5B"
+                color="#18A558"
                 height={80}
                 width={80}
               />

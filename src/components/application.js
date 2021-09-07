@@ -57,12 +57,12 @@ const useStyles = makeStyles((theme) => ({
       width:'150px'
   },
   button:{
-    backgroundColor:"#fefe22",
+    backgroundColor:"#40E0D0",
     color:"#000",
     textTransform:"none",
           
   '&:hover': {
-    backgroundColor:"yellow",
+    backgroundColor:"#00BFFF",
     color:"#000"
     },
 },
@@ -104,7 +104,7 @@ if(!localStorage.getItem("authToken")){
     switch (stepIndex) {
       case 0:
         return(
-          <Grid container className={classes.form1}>
+          <Grid container className={classes.form1} data-aos="fade-up">
           <Grid item xs={12} sm={6}>
       <TextField required id="outlined-basic1"className={classes.textField} 
          value={name} onChange={(e)=>setName(e.target.value)} size="small" label="Full Name"  variant="outlined" />
@@ -134,8 +134,8 @@ if(!localStorage.getItem("authToken")){
         );
       case 1:
         return (
-            <Grid container className={classes.form1}>
-          <Grid item xs={12}>
+            <Grid container className={classes.form1}  >
+          <Grid item xs={12} >
               <div className={classes.upload}>
               <p>Driving License</p>
               <input
@@ -192,7 +192,7 @@ if(!localStorage.getItem("authToken")){
         return (
             <Grid container className={classes.form1}>
             <Grid item xs={12}>
-                <img src={confirm} className={classes.confirm} alt ="confirm"></img> 
+                <img src={confirm} data-aos="zoom-in-up" className={classes.confirm} alt ="confirm"></img> 
             </Grid>
             <Grid item xs={12}>
                 <p>I hereby declare that all the information given by me is <strong>correct</strong>.</p>
@@ -274,7 +274,7 @@ if(!localStorage.getItem("authToken")){
                         <Loader
                         className={classes.loader}
                          type='TailSpin'
-                         color="#FF4F5B"
+                         color="#18A558"
                          height={80}
                          width={80}
                        />
@@ -282,7 +282,7 @@ if(!localStorage.getItem("authToken")){
                     ):
                  (  
             <div className={classes.form1}>
-             <img src={submit} className={classes.done} alt="submit"></img>
+             <img src={submit} data-aos="zoom-in-up"  className={classes.done} alt="submit"></img>
              <p>We <strong>recevied your application</strong>, our team will soon contact you for <strong>futher verification</strong></p>
                 </div>
                  )

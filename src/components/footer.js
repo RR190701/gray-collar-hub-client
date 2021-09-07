@@ -8,8 +8,6 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import icon from './../utils/running-man.png';
 
 const useStyles = makeStyles((theme) => ({
-
-   
   left:{
     display:'flex',
     '& > p':{
@@ -39,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 const Footer = () => {
     const classes = useStyles();
     return(
-<footer class="footer">
+<footer class="footer" >
              <div class="footer-left col-md-4 col-sm-6">
     <p class="about">
       <span> About the Project</span> An online Web-application for workers to earn money on daily basis. In covid crisis the demand of grey color workers has been increased by 25-30% so the major focus was on to provide delivery jobs to these workers.  

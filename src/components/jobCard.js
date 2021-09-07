@@ -28,14 +28,14 @@ boxSizing:"border-box",
 margin:"0.5rem 1rem"
     },
     apply:{
-        backgroundColor:"#fefe22",
+      backgroundColor:"#40E0D0",
         color:"#000",
         padding:'.3rem',
         textTransform:"none",
         fontSize:'.8rem',
               
       '&:hover': {
-        backgroundColor:"yellow",
+        backgroundColor:"#00BFFF",
         color:"#000"
         },
 

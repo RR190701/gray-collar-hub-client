@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
  money:{
      fontSize:'1.6rem',
      fontWeight:'bold',
-     color:'#32CD32'
+     color:'#00BFFF'
  },
  heading:{
      margin:'.3rem 0'

@@ -18,7 +18,7 @@ textAlign:'center',
 '& > p':{
     fontSize:'2.3rem',
     '& strong':{
-        color:"#FF4F5B"
+        color:"#18A558"
       }
 }
   },
@@ -105,14 +105,14 @@ const DailyEarning = () => {
 
     return ( <div className={classes.div}>
         <Navbar></Navbar>
-        <p><strong>Daily earning</strong> goals</p>
+        <p data-aos="fade-up" ><strong>Daily earning</strong> goals</p>
         {
             loader?(
                 <div className={classes.loaderDIV}>
                 <Loader
                 className={classes.loader}
                  type='TailSpin'
-                 color="#FF4F5B"
+                 color="#18A558"
                  height={80}
                  width={80}
                />
@@ -121,7 +121,7 @@ const DailyEarning = () => {
                 <div>
                           <div className={classes.total}>
             <img src ={wallet} alt="wallet"></img>
-            <div className={classes.walletMoney}>
+            <div className={classes.walletMoney}  data-aos="slide-right">
 
             <p>1200</p>
             <strong>Total (Rs)</strong>

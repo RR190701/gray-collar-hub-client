@@ -18,7 +18,7 @@ margin:'8rem auto'
  heading:{
      fontSize:'2.3rem',
      '& strong':{
-         color:'#FF4F5B'
+      color:"#18A558"
      },
 
  },
@@ -26,7 +26,7 @@ margin:'8rem auto'
     backgroundColor:'#EEEEEE',
     border:'4px solid 	#E5E5E5',
     width:'60%',
-    margin:'1rem auto',
+    margin:'1rem auto 5rem',
     padding:'2rem',
     borderRadius:'5px',
     display:'flex',
@@ -47,12 +47,12 @@ button:{
     textTransform:'none'
 },
 select:{
-    backgroundColor:'yellow',
+  backgroundColor:"#40E0D0",
     marginRight:'1rem',
     textTransform:'none',
     fontWeight:'bold',
     '&:hover':{
-        backgroundColor:'yellow'
+      backgroundColor:"#00BFFF",
     }
 },
 count:{
@@ -62,7 +62,7 @@ count:{
   fontSize:'1.5rem',
   fontWeight:'bold',
   '& > strong':{
-    color:"#FF4F5B"
+    color:"#18A558"
   }
 }
 
@@ -161,7 +161,7 @@ const filterDelhi = () =>{
         
     return (<div style={{overflowX: 'hidden'}} className={classes.container}>
       <Navbar></Navbar>
-        <p className={classes.heading}>
+        <p className={classes.heading}  data-aos="fade-up">
             Find jobs at 
             <strong> any location</strong>
         </p>
@@ -188,7 +188,6 @@ const filterDelhi = () =>{
         variant="contained"
         className={(select === "women")?classes.select:classes.button }
         onClick={filterWomen}
-    
       >
         Women jobs
       </Button>
@@ -206,7 +205,7 @@ const filterDelhi = () =>{
                 <Loader
                 className={classes.loader}
                  type='TailSpin'
-                 color="#FF4F5B"
+                 color="#18A558"
                  height={80}
                  width={80}
                />
