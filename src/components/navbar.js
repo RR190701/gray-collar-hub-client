@@ -68,7 +68,7 @@ export default function Navbar(props) {
     <div className={classes.navbar}>
       <div className={classes.left}>
       <img src ={icon} alt= "deliver-man" height="50"></img>
-      <p>Lets Deliver it</p>
+      <p>Gray Collar Hub</p>
       </div>
       <div className={classes.right}>
       <Button
