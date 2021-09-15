@@ -25,6 +25,10 @@ import arrow from './../utils/right-arrow.png';
 import time from './../utils/clock.png';
 import coins from './../utils/coins.png';
 import money from './../utils/money-bag.png'
+import * as packageDeliver from './../utils/pakage_deliver.json';
+import * as foodDeliver from './../utils/food_delivery.json'
+import * as cab from './../utils/cab.json'
+import collar from './../utils/collar.png'
 import FooterPagePro from './footer';
 import Footer from './footer';
 import Application from './application';
@@ -74,8 +78,34 @@ cont: {
           color:"#18A558"
         }
     },
+    pros:{
+      margin:"0 0 1rem",
+      '& strong':{
+        color:"#18A558"
+      }
+
+    },
+    prosCard:{  
+      padding: '2rem 1.5rem',
+      width:'80%',
+      borderRadius:'10px',
+      margin:'1rem auto',
+      boxSizing:"borderBox",
+    backgroundColor:'#d0f0c0',
+    textAlign:'center',
+    '& h1':{
+      marginBottom:0,
+      marginTop:'1.5rem',
+      fontSize:'1.5rem'
+    },
+    '& p':{
+      marginTop:0,
+      fontSize:'1.1rem'
+    }
+
+    },
     find_jobs:{
-        margin:"0rem 0 2rem",
+        margin:"2rem 0 3rem",
         backgroundColor:"#40E0D0",
         color:"#000",
         textTransform:"none",
@@ -118,7 +148,6 @@ cont: {
 
     },
     form:{
-      
       width:'50%',
       display:'flex',
       padding:'3rem 2rem',
@@ -228,6 +257,30 @@ margin:'1.5rem auto 1.5rem'
       preserveAspectRatio: 'xMidYMid slice'
     }
   };
+  const foodDelivery = {
+    loop: true,
+    autoplay: true, 
+    animationData: foodDeliver.default,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
+  const packageDelivery = {
+    loop: true,
+    autoplay: true, 
+    animationData: packageDeliver.default,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
+  const cabDriver = {
+    loop: true,
+    autoplay: true, 
+    animationData: cab.default,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
 
 const Home = () => {
   const [error, setError] = useState("");
@@ -293,6 +346,68 @@ const handleSubmit = async (e) =>{
               isPaused={false}/>
 
         </div>
+
+        {/* classification center */}
+  <Grid container justifyContent="center" alignItems="center" className={classes.classification}>
+<Grid item direction="row" xs={12}>
+  <h1 data-aos="slide-up" className={classes.pros}>What do we have <strong>for you</strong> ?</h1>
+</Grid>
+<Grid item direction="row" xs={12}>
+  <img data-aos="zoom-in" src={collar} height="90" alt="collar"></img>
+</Grid>
+<Grid container justifyContent="center" alignItems="center">
+  <Grid container justifyContent="center" alignItems="center" direction="row">
+
+<Grid item xs={12} sm={4}>
+ <div className={classes.prosCard} data-aos="flip-left">
+ <div>
+        <Lottie options={packageDelivery}
+     
+              height={200}
+              width={250}
+              isStopped={false}
+              isPaused={false}/>
+
+        </div>
+        <h1>Packages Delivery</h1>
+        <p>Deliver packages at the door steps</p>
+ </div>
+</Grid>
+<Grid item xs={12} sm={4}>
+  <div className={classes.prosCard} data-aos="flip-left">
+  <div>
+        <Lottie options={foodDelivery}
+     
+              height={200}
+              width={250}
+              isStopped={false}
+              isPaused={false}/>
+
+        </div>
+        <h1>Food Delivery</h1>
+        <p>Deliver food orders to nearby locations</p>
+    </div>
+</Grid>
+<Grid item xs={12} sm={4}>
+<div className={classes.prosCard} data-aos="flip-left">
+<div >
+        <Lottie options={cabDriver}
+     
+              height={200}
+              width={250}
+              isStopped={false}
+              isPaused={false}/>
+
+        </div>
+        <h1>Cab Driver</h1>
+        <p>Work as a online cab driver</p>
+    </div>
+</Grid>
+  </Grid>
+
+</Grid>
+      </Grid>
+      {/* end to classification center */}
 
 
 <Button className={classes.find_jobs} variant="contained" color="primary">
