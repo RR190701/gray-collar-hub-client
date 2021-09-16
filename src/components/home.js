@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import * as animationData from './../utils/deliveryMan.json';
 import * as dayNight from './../utils/day-night.json'
+import * as lessC from './../utils/lessCoin.json';
+import * as moreC from './../utils/moreCoin.json'
 import Grid from '@material-ui/core/Grid';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
@@ -29,12 +31,15 @@ import * as packageDeliver from './../utils/pakage_deliver.json';
 import * as foodDeliver from './../utils/food_delivery.json'
 import * as cab from './../utils/cab.json'
 import collar from './../utils/collar.png'
+import teamwork from './../utils/teamwork.png'
 import FooterPagePro from './footer';
 import Footer from './footer';
 import Application from './application';
 import timeTrack from './../utils/time-tracking.png'
 import deliveryWomen from './../utils/delivery-woman.png'
 import earning from './../utils/earning.png'
+import findJob from './../utils/find.png';
+import User from './../utils/user.png';
 
 
 
@@ -68,6 +73,7 @@ track: {
 width: '50%',
 },
 cont: {
+  marginTop:'2.5rem',
   padding: '1.5rem',
   backgroundColor:'#d0f0c0',
   },
@@ -238,17 +244,37 @@ margin:'1.5rem auto 1.5rem'
     '& strong':{
       color:"#40E0D0"
     }
-    }
+    },
+    hub:{
+      width:'300px',
+      margin:'2rem 0'
+    },
+    moneyCard:{
+      width:'90%',
+      margin:'0 auto',
+      alignItems:'center',
+      '& h1':{
+        fontSize:'1.5rem',
+        color:"#18A558"
+      }
+ },
+ diff:{
+   border:'cream solid 1px',
+   backgroundColor:'#fffdd0',
+   padding:'1rem 1.5rem .5rem' ,
+   borderRadius:'5px',
+   width:'90%',
+   margin:'0 auto',
+   display:'flex',
+   justifyContent:'space-between',
+   '& p':{
+     width:'80%',
+     fontWeight:'600'
+   }
+
+ }
   }));
 
-  const defaultOptions = {
-    loop: true,
-    autoplay: true, 
-    animationData: animationData.default,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    }
-  };
   const DayNight = {
     loop: true,
     autoplay: true, 
@@ -277,6 +303,22 @@ margin:'1.5rem auto 1.5rem'
     loop: true,
     autoplay: true, 
     animationData: cab.default,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
+  const lessCoin = {
+    loop: true,
+    autoplay: true, 
+    animationData: lessC.default,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
+  const moreCoin = {
+    loop: true,
+    autoplay: true, 
+    animationData: moreC.default,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice'
     }
@@ -337,15 +379,7 @@ const handleSubmit = async (e) =>{
         <p className={classes.home_heading} data-aos ="slide-up">
             Earn <strong> hourly</strong>, where ever and when ever you want!
         </p>
-        <div data-aos ="slide-right">
-        <Lottie options={defaultOptions}
-     
-              height={450}
-              width={400}
-              isStopped={false}
-              isPaused={false}/>
-
-        </div>
+<img data-aos ="zoom-in" className ={classes.hub} src={teamwork} alt="grey-collar-hub"></img>
 
         {/* classification center */}
   <Grid container justifyContent="center" alignItems="center" className={classes.classification}>
@@ -419,23 +453,60 @@ const handleSubmit = async (e) =>{
       onClick={handleOpen}>
         Hire workers
       </Button>
-      <div className={classes.cardsDiv}>
-      <p>With everything so easy, start your <strong>new job </strong>today</p>
-      <div className={classes.cards}>
-<Paper className={classes.card} data-aos="fade-up" >
-  <img src={submitCard} alt="submit"></img>
-  <p>Applying to a job is never been this <strong>easy</strong></p>
-</Paper>
-<Paper className={classes.card } data-aos="fade-up">
-  <img src={interview} alt="interview"></img>
-  <p>Get call for <strong>interview</strong></p>
-</Paper>
-<Paper  className={classes.card} data-aos="fade-up">
-<img src={job} alt="job"  ></img>
-<p>work for multiple companies and <strong>earn more</strong> </p>
-</Paper>
-      </div>
-      </div>
+
+{/* three steps */}
+  <Grid container justifyContent="center" alignItems="center" className={classes.cardsDiv}>
+  <p>With everything so easy, start your <strong>new job </strong>today</p>
+<Grid container justifyContent="center" alignItems="center" direction="row">
+<Grid item xs={12}  sm={2}>
+</Grid>
+
+<Grid item xs={12}  sm={4}>
+<img src={findJob} height="" alt="work"  data-aos="zoom-in-right"></img>
+</Grid>
+<Grid item xs={12}  sm={4}>
+  <div className={classes.infoCard} data-aos="zoom-in-left">
+    <h1>Find <strong>jobs</strong> easily</h1>
+<p>Find and filter jobs very easily at your closest location with your desirable shift and many more </p>
+    </div>
+</Grid>
+<Grid item xs={12} sm={2}>
+</Grid>
+  </Grid>
+  
+  <Grid container justifyContent="center" alignItems="center" direction="row">
+  <Grid item xs={12} sm={2}>
+</Grid>
+<Grid item xs={12} sm={4}>
+<div className={classes.infoCard} data-aos="zoom-in-right">
+    <h1>Complete your <strong>profile</strong> </h1>
+<p>Applying to a job is never been this easy just omplete your profile and submit applications in one click</p>
+    </div>
+</Grid>
+<Grid item xs ={12} sm={4}>
+<img src={User} height="" alt="work" data-aos="zoom-in-left"></img>
+</Grid>
+<Grid item xs={12} sm={2}>
+</Grid>
+  </Grid> 
+
+  <Grid container justifyContent="center" alignItems="center" direction="row">
+  <Grid item xs={12} sm={2}>
+</Grid>
+<Grid item xs={12} sm={4}>
+<img src={job} height="" alt="work"  data-aos="zoom-in-right"></img>
+</Grid>
+<Grid item xs={12} sm={4}>
+  <div className={classes.infoCard} data-aos="zoom-in-left">
+    <h1>Work for <strong>multiple</strong> companies</h1>
+<p>Start working for multiple company at a time and earn more</p>
+    </div>
+</Grid>
+<Grid item xs={12} sm={2}>
+</Grid>
+  </Grid>
+</Grid>
+{/* end of three steps */}
 
       <div className={classes.down}>
         <h1>Work <strong>Day</strong> and <strong>Night</strong>, plan your own shift</h1>
@@ -452,25 +523,53 @@ const handleSubmit = async (e) =>{
         Utilize that free time to earn a little more, selects jobs and work for all of them, don't be a normal delivery guy be smart work with multiple big companies to maximize your earnings.
 
         </h2>
-        <p>With us</p>
-        <div className={classes.earn} data-aos ="zoom-in-up">
-          <img src={work} alt="work"></img>
-          <img src={arrow} alt="work"></img>
-          <img src={work} alt="work"></img>
-          <img src={arrow} alt="work"></img>
-          <img src={work} alt="work"></img>
-          <img src={money} alt="work"></img>
-        </div>
-        <p>Normal delivery job</p>
-        <div className={classes.earn} data-aos ="zoom-in-up">
-          <img src={work} alt="work"></img>
-          <img src={arrow} alt="work"></img>
-          <img src={time} alt="work"></img>
-          <img src={arrow} alt="work"></img>
-          <img src={work} alt="work"></img>
-          <img src={coins} alt="work"></img>
-        </div>
       </div>
+      
+
+<Grid container justifyContent="center" alignItems="center">
+<Grid container justifyContent="center" alignItems="center" direction="row">
+<Grid item xs={12}  sm={2}>
+</Grid>
+<Grid item xs={12}  sm={4}>
+<div className={classes.moneyCard}>
+        <Lottie options={lessCoin}
+              //  style={{marginTop:'5rem'}}
+              height={250}
+              width={250}
+              isStopped={false}
+              isPaused={false}/>
+              <h1>With Other Company</h1>
+              <div  className={classes.diff} data-aos="slide-up">
+                <img src={time} height ="60" alt="job"></img>
+                <p>
+                  You waste you time while waiting for your next shift
+                </p>
+                </div>
+</div>
+</Grid>
+<Grid item xs={12}  sm={4}>
+<div className={classes.moneyCard}>
+        <Lottie options={moreCoin}
+     
+              height={250}
+              width={250}
+              isStopped={false}
+              isPaused={false}/>
+               <h1>With Grey Collar Hub</h1>
+               <div className={classes.diff}  data-aos="slide-up">
+                <img src={work} alt="job"></img>
+                <p>
+                  You work with multiple comapnies, plan your own shifts and earn more
+                </p>
+                </div>
+</div>
+</Grid>
+<Grid item xs={12} sm={2}>
+</Grid>
+  </Grid>
+</Grid>
+
+
       <Grid container justifyContent="center" alignItems="center" className={classes.cont}>
 <Grid item direction="row" xs={12}>
   <h1 className={classes.r}>What's <strong>more</strong> ?</h1>
