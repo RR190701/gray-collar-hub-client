@@ -1,5 +1,5 @@
-# Lets Deliver
-> Optimize your earnings by working during peak hours for more than one company. Less waiting times and higher earnings. Utilize free time to earn more. Support your family with that extra income. We let you apply for multiple jobs with big companies to maximize your earnings :fire:.
+# Grey Collar Hub
+> Earn better by working during peak hours for more than one company. Less waiting times and higher earnings. Utilize free time to earn more. Don't chosse a normal delivery or driver job. We let you apply for multiple jobs with big companies to maximize your earnings :fire:.
 
 ## Features
 </br>
@@ -12,13 +12,13 @@
 - [x] Delivery jobs for **womens** :heart:
 - [x] Secure admin login
 - [x] Admin dasboard 
-- [x] Records daily earning
+- [x] Creates daily earning goals
 
 ## Demo version
 </br>
 A demo version is automatically deployed for this repositories:
 
-- Deployment for frontend part -[https://lets-deliver.netlify.app](https://lets-deliver.netlify.app)
+- Deployment for frontend part -[https://grey-collar-hub.netlify.app](https://grey-collar-hub.netlify.app)
 - Deployment for backend part - [https://pure-caverns-24063.herokuapp.com](https://pure-caverns-24063.herokuapp.com)
 
 ## Technology Stack 
@@ -99,5 +99,4 @@ cd frontend_ui
 ## Contributing
 
 > Feel free to **contribute** :heart_eyes:
-- When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change."# HackX-frontend" 
-"# gray-collar-hub-client" 
+- When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change."
