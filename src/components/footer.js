@@ -62,13 +62,13 @@ const Footer = () => {
     </div>
     <div>
       <i class="fa fa-envelope"></i>
-      <p ><a href="#"> office@letsdeliever.com</a></p>
+      <p ><a href="#"> office@GreyCollarHub.com</a></p>
     </div>
   </div>
   <div class="footer-right col-md-4 col-sm-6">
   <div className={classes.left}>
   <img src ={icon} alt= "deliver-man" height="60"></img>
-      <p style={{color: 'white'}}>Lets Deliver</p>
+      <p style={{color: 'white'}}>Grey Collar Hub</p>
       </div>
     <p class="menu">
       <a href="#"> Home</a> |

@@ -7,6 +7,8 @@ import flipkart from './../utils/flipkart.png';
 import Button from '@material-ui/core/Button';
 import {Link} from 'react-router-dom';
 import Application from './application';
+import ola from './../utils/ola.jpg';
+import uber from './../utils/uber.png';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
@@ -94,6 +96,12 @@ return flipkart;
 }
 else if(props.clientName.toLowerCase() === 'swiggy'){
   return swiggy;
+}
+else if(props.clientName.toLowerCase() === 'ola'){
+  return ola;
+}
+else if(props.clientName.toLowerCase() === 'uber'){
+  return uber;
 }
 else {
   return zamato;

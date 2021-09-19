@@ -70,7 +70,7 @@ count:{
 
 const Findjobs = ({history}) => {
   const [Data, setData] = useState([]);
-  const [Url, seturl] = useState(`allJobs`);
+  const [Url, seturl] = useState(`AllDeliveryJobs`);
   const [count, setCount] = useState(0)
  
   useEffect(() => {
@@ -84,8 +84,11 @@ const Findjobs = ({history}) => {
     //  console.log(Url)
           const { data } = await axios.get(`https://pure-caverns-24063.herokuapp.com/api/Jobs/`+Url);
           setData(data);
-          if(data.allJobs){
-            setCount(data.allJobs.length)
+          if(data.alldeliveryJobs){
+            setCount(data.alldeliveryJobs.length)
+          }
+          if(data.alldrivingJobs){
+            setCount(data.alldrivingJobs.length)
           }
           if(data.allFemaleJobs){
             setCount(data.allFemaleJobs.length)
@@ -100,26 +103,36 @@ const Findjobs = ({history}) => {
       };
       fetchData();
     },[history]);
-console.log(Data.allJobs)
+console.log(Data.alldeliveryJobs)
     const classes = useStyles();
     const [select, setSelect] = useState("all");
 const [loader, setLoader] =useState(true);
     
-    const filterAll = () =>{
+    const filterDelivery = () =>{
       setLoader(true)
-      seturl(`allJobs`)
-       setSelect("all");
+      seturl(`AllDeliveryJobs`)
+       setSelect("delivery");
     }
-const filterWomen = () =>{
+const filterDriving = () =>{
 
   setLoader(true)
-  seturl(`allfemaleJobs`)
-  setSelect("women");
+  seturl(`AllDrivingJobs`)
+  setSelect("driving");
   
   
 
 
     }
+    const filterfemale = () =>{
+
+      setLoader(true)
+      seturl(`allfemaleJobs`)
+      setSelect("female");
+      
+      
+    
+    
+        }
  const filterMumbai= () =>{
     setSelect("mumbai");
     }
@@ -144,11 +157,14 @@ const filterDelhi = () =>{
               //  console.log(Url)
                     const { data } = await axios.get(`https://pure-caverns-24063.herokuapp.com/api/Jobs/`+Url);
                     setData(data)
-                    if(data.allJobs){
-                      setCount(data.allJobs.length)
+                    if(data.alldeliveryJobs){
+                      setCount(data.alldeliveryJobs.length)
                     }
-                    if(data.allFemaleJobs){
-                      setCount(data.allFemaleJobs.length)
+                    if(data.alldrivingJobs){
+                      setCount(data.alldrivingJobs.length)
+                    }
+                    if(data.allfemaleJobs){
+                      setCount(data.allfemaleJobs.length)
                     }
                     setLoader(false)
                   
@@ -172,10 +188,10 @@ const filterDelhi = () =>{
         <div className={classes.filter}>
         <Button
         variant="contained"
-        className={(select === "all")?classes.select:classes.button }
-        onClick={filterAll}
+        className={(select === "delivery")?classes.select:classes.button }
+        onClick={filterDelivery}
       >
-        All
+        Delivery Jobs
       </Button>
       {/* <Button
         variant="contained"
@@ -186,10 +202,17 @@ const filterDelhi = () =>{
       </Button> */}
       <Button
         variant="contained"
-        className={(select === "women")?classes.select:classes.button }
-        onClick={filterWomen}
+        className={(select === "driving")?classes.select:classes.button }
+        onClick={filterDriving}
       >
-        Women jobs
+        Driving jobs
+      </Button>
+      <Button
+        variant="contained"
+        className={(select === "female")?classes.select:classes.button }
+        onClick={filterfemale}
+      >
+        Female jobs
       </Button>
       {/* <Button
         variant="contained"
@@ -212,8 +235,8 @@ const filterDelhi = () =>{
                </div>
             ):
            
-            <div  className={classes.jobs} >{ Url === `allJobs` ? ( 
-             Data.allJobs?.map((jobs, i) => (
+            <div  className={classes.jobs} >{ Url === `AllDeliveryJobs` ? ( 
+             Data.alldeliveryJobs?.map((jobs, i) => (
             <JobCard
             key={i}
             clientId = {jobs.clientId}
@@ -226,7 +249,21 @@ const filterDelhi = () =>{
             JobId = {jobs.JobID}
             />
       ))
-            ):(
+            ): Url === `AllDrivingJobs`? (
+              Data.alldrivingJobs?.map((jobs, i) => (
+                <JobCard
+                key={i}
+                clientId = {jobs.clientId}
+                clientName = {jobs.clientName}
+                gender = {jobs.gender}
+                jobName = {jobs.jobName}
+                location = {jobs.location}
+                salary = {jobs.salary}
+                shift = {jobs.shift} 
+                JobId = {jobs.JobID}
+                />
+          ))
+            ): (
               Data.allFemaleJobs?.map((jobs, i) => (
                 <JobCard
                 key={i}
