@@ -105,7 +105,7 @@ const Findjobs = ({history}) => {
     },[history]);
 console.log(Data.alldeliveryJobs)
     const classes = useStyles();
-    const [select, setSelect] = useState("all");
+    const [select, setSelect] = useState("delivery");
 const [loader, setLoader] =useState(true);
     
     const filterDelivery = () =>{
@@ -134,10 +134,14 @@ const filterDriving = () =>{
     
         }
  const filterMumbai= () =>{
-    setSelect("mumbai");
+  setLoader(true)
+  seturl(`MumbaiJobs`)
+    setSelect("Mumbai");
     }
 const filterDelhi = () =>{
-    setSelect("delhi");
+  setLoader(true)
+  seturl(`DelhiJobs`)
+    setSelect("Delhi");
             }    
 
       
@@ -223,6 +227,26 @@ const filterDelhi = () =>{
       </Button> */}
         </div>
         {
+          <p className={classes.count}>Trending active jobs</p>
+        }
+            <div className={classes.filter}>
+  
+      <Button
+        variant="contained"
+        className={(select === "Delhi")?classes.select:classes.button }
+        onClick={filterDelhi}
+      >
+        Delhi
+      </Button>
+      <Button
+        variant="contained"
+        className={(select === "Mumbai")?classes.select:classes.button }
+        onClick={filterMumbai}
+      >
+        Mumbai
+      </Button>
+        </div>
+        {
             loader?(
                 <div>
                 <Loader
@@ -249,8 +273,8 @@ const filterDelhi = () =>{
             JobId = {jobs.JobID}
             />
       ))
-            ): Url === `AllDrivingJobs`? (
-              Data.alldrivingJobs?.map((jobs, i) => (
+            ): Url === `MumbaiJobs`? (
+              Data.allMumbaiJobs?.map((jobs, i) => (
                 <JobCard
                 key={i}
                 clientId = {jobs.clientId}
@@ -263,7 +287,21 @@ const filterDelhi = () =>{
                 JobId = {jobs.JobID}
                 />
           ))
-            ): (
+            ):Url === `DelhiJobs`? (
+              Data.alldelhiJobs?.map((jobs, i) => (
+                <JobCard
+                key={i}
+                clientId = {jobs.clientId}
+                clientName = {jobs.clientName}
+                gender = {jobs.gender}
+                jobName = {jobs.jobName}
+                location = {jobs.location}
+                salary = {jobs.salary}
+                shift = {jobs.shift} 
+                JobId = {jobs.JobID}
+                />
+          ))
+            ):Url === `allfemaleJobs`? (
               Data.allFemaleJobs?.map((jobs, i) => (
                 <JobCard
                 key={i}
@@ -277,7 +315,21 @@ const filterDelhi = () =>{
                 JobId = {jobs.JobID}
                 />
           ))
-            )
+            ):Url === `AllDrivingJobs`? (
+              Data.alldrivingJobs?.map((jobs, i) => (
+                <JobCard
+                key={i}
+                clientId = {jobs.clientId}
+                clientName = {jobs.clientName}
+                gender = {jobs.gender}
+                jobName = {jobs.jobName}
+                location = {jobs.location}
+                salary = {jobs.salary}
+                shift = {jobs.shift} 
+                JobId = {jobs.JobID}
+                />
+          ))
+            ):(null)
         }
             </div>
           
