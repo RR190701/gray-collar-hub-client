@@ -48,13 +48,13 @@ Please get familiar with the components of the project in order to be able to co
 
 ### Steps
 - `git clone <repository-url>` where `<repository-url>`is the link to the forked repository
-- `cd hackNPitch_client`
+- `cd hackNPitch_Error400_GreyCollarHub`
 
 Note : If you want to contribute, first fork the original repository and clone the forked repository into your local machine followed by `cd` into the directory
 
 ```
-git clone https://github.com/USERNAME/hackNPitch_client
-cd hackNPitch_client
+git clone https://github.com/USERNAME/hackNPitch_Error400_GreyCollarHub
+cd hackNPitch_Error400_GreyCollarHub
 ```
 
 ## Local Installation for backend
@@ -90,7 +90,7 @@ cd HackNpitch_server
 #### Starting frontend
 
 ```
-cd hackNPitch_client
+cd hackNPitch_Error400_GreyCollarHub
 ```
 - Install all the dependencies with `npm install`
 - Start the server with `npm start`
