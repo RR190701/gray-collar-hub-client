@@ -2,6 +2,8 @@ import React,{useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ApplicationCard from './ApplicationCard';
 import axios from 'axios';
+import Grid from '@material-ui/core/Grid';
+import Apps from './../utils/No appication.svg';
 import Navbar from './navbar';
 import Loader from "react-loader-spinner";
 
@@ -12,6 +14,9 @@ width:'100%'
   loader:{
     margin:'8rem auto'
         },
+        info:{
+          fontSize: '2.3rem'
+              },
 myApp:{
     width:'100%',
     textAlign:'center',
@@ -39,6 +44,7 @@ app:{
 }
  
   }));
+   const data1 = [];
 const MyApplication = () => {
     const [data, setData] =useState([])
     const classes = useStyles();
@@ -96,7 +102,7 @@ const MyApplication = () => {
                    width={80}
                  />
                  </div>
-              ):(
+              ): data1.length !== 0?(
 
                <div  className={classes.app} >
                  {
@@ -110,6 +116,16 @@ const MyApplication = () => {
 
                  }
             </div>
+              ):(
+                <div>
+                    <Grid container justifyContent="center" alignItems="center" direction="row">
+          <Grid item xs={8}>
+                  <div  className={classes.info}>Please Apply for the job and see your applications status here....</div>
+                  </Grid><Grid item xs={4}>
+ <img src={Apps} className={classes.icon} width="100%" ></img>
+ </Grid>
+ </Grid>
+                </div>
               )
               
 
