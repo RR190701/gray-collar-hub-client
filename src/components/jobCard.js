@@ -1,10 +1,17 @@
 import React ,{useState, useEffect} from "react";
 import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import swiggy from './../utils/swiggy-logo.png';
 import zamato from './../utils/zamato-logo.png';
 import flipkart from './../utils/flipkart.png';
+import login from './../utils/Login.svg';
 import Button from '@material-ui/core/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 import {Link} from 'react-router-dom';
 import Application from './application';
 import ola from './../utils/ola.jpg';
@@ -76,7 +83,7 @@ justifyContent:'space-between',
   }));
 
 const JobCard = (props) => {
-
+  const [openinfo, setOpeninfo] = React.useState(false);
     const classes = useStyles();
     // const [JobId, setJobId] = useState();
     // setJobId(props.JobId)
@@ -89,6 +96,49 @@ const handleOpen = () => {
 const handleClose = () => {
   setOpen(false);
 };
+const handleInfoClickOpen = () => {
+  setOpeninfo(true);
+};
+
+const handleInfoClose = () => {
+  setOpeninfo(false);
+
+};
+const Body = () => {
+  return (
+    <div>
+      
+      {/* <Button variant="outlined" onClick={handleClickOpen}>
+        Open alert dialog
+      </Button> */}
+   
+        <DialogTitle id="alert-dialog-title">
+          
+          {"Want to apply to this job?"}
+        </DialogTitle>
+        <DialogContent>
+        <Grid container justifyContent="center" alignItems="center" direction="row">
+          <Grid item xs={8}>
+        <img src={login} className={classes.icon} width="90%" ></img>
+        </Grid><Grid item xs={4}>
+          <DialogContentText id="alert-dialog-description">
+            
+            Please login or signup into your account using our simple OTP authentication.
+          </DialogContentText>
+          </Grid>
+          </Grid>
+        </DialogContent>
+      
+        <DialogActions>
+        {/* <Button className={classes.apply}  variant="contained" color="secondary" onClick={handleInfoClose}>Close</Button> */}
+        <Link style={{textDecoration: 'none'}} to="/auth">
+          <Button className={classes.apply} variant="contained" color="primary">Login</Button>
+         </Link>
+        </DialogActions>
+
+    </div>
+  );
+}
 
 const getIcon = () =>{
 if(props.clientName.toLowerCase() === 'flipkart'){
@@ -125,10 +175,19 @@ console.log(props.JobId)
 {localStorage.getItem("authToken") ? (
 <Button className={classes.apply} variant="contained" color="primary" onClick={handleOpen}>
         Apply now
+       
       </Button>
 ):(
-<Button className={classes.apply} variant="contained" color="primary" disabled>
+<Button className={classes.apply} variant="contained" color="primary" onClick={handleInfoClickOpen}>
         Apply now
+        <Dialog
+        open={openinfo}
+        onClose={handleInfoClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <Body />
+        </Dialog>
       </Button>
 )}
 <Modal
