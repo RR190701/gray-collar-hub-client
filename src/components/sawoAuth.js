@@ -18,7 +18,7 @@ auth:{
        marginTop:'3rem'
     },     
      '& strong':{
-        color:"#FF4F5B"
+        color:"#18A558"
       }
 
 }
