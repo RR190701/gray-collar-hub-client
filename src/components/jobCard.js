@@ -79,6 +79,22 @@ justifyContent:'space-between',
       icon:{
         borderRadius:'5pc',
         boxShadow:'rgba(0, 0, 0, 0.24) 0px 3px 8px'
+      },
+      modalHeading:{
+        textAlign:'center',
+        color:'black',
+        '& > strong':{
+          color:"#18A558"
+        }
+
+      },
+      modalBody:{
+        padding:'1rem 1rem 1rem 2rem'
+      },
+      loginImg:{
+        width:'90%',
+        margin:'2rem 0'
+
       }
   }));
 
@@ -106,25 +122,19 @@ const handleInfoClose = () => {
 };
 const Body = () => {
   return (
-    <div>
+    <div className={classes.modalBody}>
       
-      {/* <Button variant="outlined" onClick={handleClickOpen}>
-        Open alert dialog
-      </Button> */}
-   
-        <DialogTitle id="alert-dialog-title">
+        <DialogTitle className={classes.modalHeading} id="alert-dialog-title">
           
-          {"Want to apply to this job?"}
+          Want to <strong>apply</strong> to this job?
         </DialogTitle>
         <DialogContent>
         <Grid container justifyContent="center" alignItems="center" direction="row">
-          <Grid item xs={8}>
-        <img src={login} className={classes.icon} width="90%" ></img>
-        </Grid><Grid item xs={4}>
-          <DialogContentText id="alert-dialog-description">
+          <Grid item xs={5}>
+        <img src={login} alt="login" className={classes.loginImg} width="90%" ></img>
+        </Grid><Grid item xs={7}>
+          <p>Please login or signup into your account using our simple OTP authentication.</p>
             
-            Please login or signup into your account using our simple OTP authentication.
-          </DialogContentText>
           </Grid>
           </Grid>
         </DialogContent>
