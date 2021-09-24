@@ -192,11 +192,11 @@ const [salary, setSalary] =useState("");
         try {
     
     
-          const { data } = await axios.get(`https://pure-caverns-24063.herokuapp.com/api/Jobs/allJobs`);
+          const { data } = await axios.get(`https://pure-caverns-24063.herokuapp.com/api/Jobs/AllDeliveryJobs`);
         
            
         
-          data.allJobs?.forEach((element, i) => {
+          data.alldeliveryJobs?.forEach((element, i) => {
             l.push({
               id: i+1,
               clientId: element.clientId, clientName:element.clientName, jobName:element.jobName, 

@@ -102,7 +102,7 @@ const MyApplication = () => {
                    width={80}
                  />
                  </div>
-              ): data1.length !== 0?(
+              ): data.length !== 0?(
 
                <div  className={classes.app} >
                  {
