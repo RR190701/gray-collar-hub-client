@@ -227,7 +227,7 @@ if(!localStorage.getItem("authToken")){
     };
     try {
       const { data } = await axios.post(
-        "/api/apply/registerApplication",
+        "https://pure-caverns-24063.herokuapp.com/api/apply/registerApplication",
         { 
           jobId,
           name, 
