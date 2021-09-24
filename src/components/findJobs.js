@@ -93,6 +93,12 @@ const Findjobs = ({history}) => {
           if(data.allFemaleJobs){
             setCount(data.allFemaleJobs.length)
           }
+          if(data.alldelhiJobs){
+            setCount(data.alldelhiJobs.length)
+          }
+          if(data.allMumbaiJobs){
+            setCount(data.allMumbaiJobs.length)
+          }
 
           console.log(Data)
           setLoader(false)
