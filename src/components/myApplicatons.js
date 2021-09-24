@@ -41,7 +41,21 @@ app:{
     maxHeight:'500px',
     boxSizing:'border-box',
     overflow:'scroll',
-}
+},
+message:{
+  width:'100%',
+  '& > p':{
+    fontSize:'1.8rem',
+    margin:0,
+    '& > strong':{
+      color:"#18A558"
+    }
+  }
+},
+noApply:{
+  width:'40%',
+  margin:'2rem 0'
+},
  
   }));
    const data1 = [];
@@ -119,10 +133,15 @@ const MyApplication = () => {
               ):(
                 <div>
                     <Grid container justifyContent="center" alignItems="center" direction="row">
-          <Grid item xs={8}>
-                  <div  className={classes.info}>Please Apply for the job and see your applications status here....</div>
-                  </Grid><Grid item xs={4}>
- <img src={Apps} className={classes.icon} width="100%" ></img>
+          <Grid item xs={12} sm={6}>
+                  <div className={classes.message} data-aos="fade-up">
+                    <p>Apply for the <strong>jobs</strong> and check</p>
+                    <p>your <strong>applications</strong> status here
+                      </p>
+                    </div>
+                  </Grid>
+                  <Grid  xs={12} sm={6} className={classes.right}>
+ <img src={Apps} alt="no-applications"  className={classes.noApply} data-aos="fade-up"></img>
  </Grid>
  </Grid>
                 </div>
