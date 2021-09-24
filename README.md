@@ -48,13 +48,13 @@ Please get familiar with the components of the project in order to be able to co
 
 ### Steps
 - `git clone <repository-url>` where `<repository-url>`is the link to the forked repository
-- `cd frontend_ui`
+- `cd hackNPitch_client`
 
 Note : If you want to contribute, first fork the original repository and clone the forked repository into your local machine followed by `cd` into the directory
 
 ```
-git clone https://github.com/USERNAME/frontend_ui
-cd frontend_ui
+git clone https://github.com/USERNAME/hackNPitch_client
+cd hackNPitch_client
 ```
 
 ## Local Installation for backend
@@ -62,13 +62,13 @@ cd frontend_ui
 
 ### Steps
 - `git clone <repository-url>` where `<repository-url>`is the link to the forked repository
-- `cd backend_services`
+- `cd HackNpitch_server`
 
 Note : If you want to contribute, first fork the original repository and clone the forked repository into your local machine followed by `cd` into the directory
 
 ```
-git clone https://github.com/USERNAME/backend_services
-cd backend_services
+git clone https://github.com/USERNAME/HackNpitch_server 
+cd HackNpitch_server
 ```
 
 #### Config Variables
@@ -81,7 +81,7 @@ Define config variables in config.env.
 #### Starting server
 
 ```
-cd backend_services
+cd HackNpitch_server
 ```
 - Install all the dependencies with `npm install`
 - Start the server with `npm start`
@@ -90,7 +90,7 @@ cd backend_services
 #### Starting frontend
 
 ```
-cd frontend_ui
+cd hackNPitch_client
 ```
 - Install all the dependencies with `npm install`
 - Start the server with `npm start`

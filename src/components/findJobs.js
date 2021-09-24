@@ -167,8 +167,8 @@ const filterDelhi = () =>{
                     if(data.alldrivingJobs){
                       setCount(data.alldrivingJobs.length)
                     }
-                    if(data.allfemaleJobs){
-                      setCount(data.allfemaleJobs.length)
+                    if(data.allFemaleJobs){
+                      setCount(data.allFemaleJobs.length)
                     }
                     setLoader(false)
                   
